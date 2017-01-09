@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+{{> meta }}
+
+<script >
+  jQuery(window).load(function () {
+    jQuery('.magnifier').touchTouch();
+  });
+</script>
+</head>
+<body>
+
+{{> header }}
+
+<div class="bg-content">
+  <!-- content -->
+  <div id="content">
+    <div class="ic"></div>
+    <div class="container">
+      <div class="row">
+        <article class="span8">
+          <h3>About Me</h3>
+          <div class="inner-1">
+            <div class="blog-entry">
+              {{{contents}}}
+            </div>
+          </div>
+        </article>
+        <article class="span4">
+          <h3>Contact info</h3>
+          <div class="map"> <a href="#"><img src="{{root}}img/me.jpg" alt=""></a> </div>
+          <address class="address-1">
+          <strong>MScAC Student, University of Toronto  </strong>
+          <div class="overflow"> 
+            <span>E-mail:</span> manwar[at]cs.toronto.edu<br>            
+          </address>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{{> footer template='about' }}
+<script src="{{ root }}js/bootstrap.js"></script>
+</body>
+</html>

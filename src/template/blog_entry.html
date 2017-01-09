@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+{{> meta }}
+
+<script >
+  jQuery(window).load(function () {
+    jQuery('.magnifier').touchTouch();
+  });
+</script>
+</head>
+<body>
+
+{{> header }}
+
+<div class="bg-content">
+
+  <!--  content  -->
+  <div id="content">
+    <div class="ic"></div>
+    <div class="container">
+      <div class="row">
+
+        <article class="span8 offset2">
+          <h3> {{title}} </h3>  
+          <div class="inner-1">                   	
+            <time datetime="" class="date-1"><i class="icon-calendar icon-white"></i> {{dateFormat}}</time>
+            <div class="name-author"><i class="icon-user icon-white"></i> <a href="#">{{author}}</a></div>
+            <div class="clear"></div>
+            <div style="text-align:center">
+              <img alt="" src="{{root}}{{{headerImage}}}" style="margin: 10px 0px 10px 0px;">
+            </div>
+            <div class="blog-entry">
+              {{{contents}}}
+            </div>
+            
+          </div>
+
+     
+          <div class="buttons-wrapper">        
+
+            {{#if previous.title }}              
+                <a href="{{root}}{{previous.path}}" class="btn btn-1 ">< {{ previous.title }}</a>              
+            {{/if}}
+
+            {{#if next.title }}             
+                <a href="{{root}}{{next.path}}" class="btn btn-1 " > {{ next.title }} ></a>              
+            {{/if}}
+
+          </div>
+          
+        </article>    
+
+        
+      </div>
+    </div>
+  </div>
+
+  {{>fromblog sectionTitle = 'More From Blog'}}
+
+</div>
+
+
+{{> footer template='blog entry' }}
+<script src="{{ root }}js/bootstrap.js"></script>
+</body>
+</html>

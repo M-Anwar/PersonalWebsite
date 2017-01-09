@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+{{> meta }}
+
+<script >
+  jQuery(window).load(function () {
+    jQuery('.magnifier').touchTouch();
+  });
+</script>
+</head>
+<body>
+
+{{> header }}
+<!-- <div class="spinner"></div> -->
+<div class="bg-content">
+	<div class="container">
+	  <div class="row">
+	    <div class="span12">
+	      <!-- slider -->
+	      <div class="flexslider">
+	        <ul class="slides">
+	          <li> <img src="{{root}}img/homepage/slide-1.jpg" alt=""> </li>
+	          <li> <img src="{{root}}img/homepage/slide-2.jpg" alt=""> </li>
+	          <li> <img src="{{root}}img/homepage/slide-3.jpg" alt=""> </li>
+	          <!-- <li> <img src="{{root}}img/slide-4.jpg" alt=""> </li> -->
+	          <!-- <li> <img src="{{root}}img/slide-5.jpg" alt=""> </li> -->
+	        </ul>
+	      </div>
+	      <span id="responsiveFlag"></span>
+	      <div class="block-slogan">
+	        <h2>Welcome!</h2>
+	        <div>
+	          <p>Hello There. My name is Muhammed Anwar and welcome to my website. On here you can read about my past projects and find more information on my current work and research interests. Visit the <a href="{{root}}contact"> About Me </a> page to get a glimpse of my past accomplisments, or visit the <a href="{{root}}blog"> Blog </a> to see my latest adventures.</p>
+	         
+	          <!-- <p style="text-align:center; padding-top:20px;"><a href="#" class="btn btn-1">Download Bootstrap</a></p> -->
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+
+	{{>fromblog sectionTitle = 'From Blog'}}   
+
+</div>
+
+{{> footer template='page' }}
+
+<script src="{{ root }}js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+{{> meta }}
+
+<script >
+  jQuery(window).load(function () {
+    jQuery('.magnifier').touchTouch();
+  });
+</script>
+</head>
+<body>
+
+{{> header }}
+
+<div class="bg-content">
+  <!-- content -->
+  <div id="content">
+    <div class="ic"></div>
+    <div class="container">
+      <div class="row">
+        <article class="span12">
+          <h3>Projects</h3>
+        </article>
+        <div class="clear"></div>
+        <ul class="thumbnails thumbnails-1 list-services">
+          {{#each navsub}}
+            {{#if isProject}}
+              {{#if clearFix}}  <div class="clear"></div> {{/if}}
+              <li class="span4">
+                <div class="thumbnail thumbnail-1"> <img  src="{{root}}{{{headerImage}}}" alt="">
+                  <section> <a href="{{path}}" class="link-1">{{title}} </a>
+                  <p>{{description}}</p>
+                  </section>
+                </div>
+              </li> 
+            {{/if}}
+          {{/each}}   
+         
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{> footer template='projects' }}
+<script src="{{ root }}js/bootstrap.js"></script>
+</body>
+</html>

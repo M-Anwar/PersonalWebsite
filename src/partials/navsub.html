@@ -1,0 +1,14 @@
+{{#if navsub}}
+
+<article class="span4">        
+	<h3>Featured and New Content</h3>
+	<ul class="list extra extra1">
+		{{#each navsub}}
+			{{#if featured}}
+				<li><a href="{{path}}"><b>{{dateFormat}}</b> - {{title}}</a></li>
+			{{/if}}
+		{{/each}} 
+	</ul>          
+</article>
+
+{{/if}}

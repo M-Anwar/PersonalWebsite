@@ -1,0 +1,35 @@
+{{#if navsub}}
+  <div class="row-1">
+    <div class="container">
+      <div class="row">
+        <article class="span12">
+          <h4>{{sectionTitle}}</h4>
+        </article>
+        <ul class="thumbnails thumbnails-1">
+          {{#each navsub}}
+            {{#if featured}}
+              <li class="span3">
+                <div class="thumbnail thumbnail-1 from-blog">
+                  <!-- <h3>Web Design</h3> -->             
+                  
+                  <img  src="{{root}}{{{headerImage}}}" alt="" >
+                  
+                  <section> <a href="{{path}}">
+                    <h3>{{title}} </h3>
+                    </a>
+                    <div class="meta">
+                      <time datetime="" class="date-1"><i class="icon-calendar"></i> {{dateFormat}}</time>
+                      <div class="name-author"><i class="icon-user"></i> <a href="#">{{author}}</a></div>                       
+                    <div class="clear"></div>
+                    <p>{{shortDescription}}</p>
+                    <!-- <a href="{{path}}" class="btn btn-1">Read More</a> -->
+                  </section>
+                </div>
+              </li>      
+            {{/if}}  
+          {{/each}}    
+        </ul>
+      </div>
+    </div>
+  </div>
+{{/if}}

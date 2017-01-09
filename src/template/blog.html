@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+{{> meta }}
+
+<script >
+  jQuery(window).load(function () {
+    jQuery('.magnifier').touchTouch();
+  });
+</script>
+</head>
+<body>
+
+{{> header }}
+
+<div class="bg-content">
+  <!--  content  -->
+  <div id="content">
+    <div class="ic"></div>
+    <div class="container">
+      <div class="row">
+        <article class="span8">
+          <div class="inner-1">          	
+            <ul class="list-blog">
+				{{#each navsub}}
+					<li>
+						<h3>{{title}}</h3>
+						<time datetime="" class="date-1"><i class="icon-calendar icon-white"></i> {{dateFormat}}</time>
+						<div class="name-author"><i class="icon-user icon-white"></i> <a href="/contact">{{author}}</a></div>
+						<!-- <a href="#" class="comments"><i class="icon-comment icon-white"></i> 11 comments</a> -->
+						<div class="clear"></div>
+						<img alt="" src="{{root}}{{{headerImage}}}">
+						<p>{{description}}</p>
+						<a href="{{path}}" class="btn btn-1">Read More</a> 
+					</li>	              
+				{{/each}}              
+            </ul>
+          </div>
+        </article>
+
+        {{> navsub}}
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{{> footer template='blog' }}
+<script src="{{ root }}js/bootstrap.js"></script>
+</body>
+</html>

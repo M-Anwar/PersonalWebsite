@@ -1,0 +1,22 @@
+<!-- main navigation -->
+<ul class="nav sf-menu">
+
+	{{#each navmain}}
+		<li {{#if active}} class="active"{{/if}}>
+			<a href="{{path}}">{{title}}</a>
+		</li>
+	{{/each}}
+	
+</ul>
+
+
+<!-- <nav class="nav main">
+	<ul>
+	{{#each navmain}}
+		<li>
+			<a href="{{path}}"{{#if active}} class="active"{{/if}}>{{title}}</a>
+		</li>
+	{{/each}}
+	</ul>
+</nav>
+ -->
