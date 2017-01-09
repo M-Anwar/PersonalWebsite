@@ -1,24 +1,25 @@
-# Metalsmith Demo 
+# Muhammed Anwar Personal Website
 
-A demonstration site created using the Node.js Metalsmith static site generator.
+The website is hosted on http://www.cs.toronto.edu/~manwar
 
-[Preview the built site...](https://rawgit.com/sitepoint-editors/metalsmith-demo/master/build/)
-
-[Read the tutorial on SitePoint](http://www.sitepoint.com/create-static-site-metalsmith).
+>Disclaimer
+This publication material is presented to ensure timely dissemination of scholarly and technical work. Copyright and all rights therein are retained by authors or by other copyright holders. All persons copying this information are expected to adhere to the terms and constraints invoked by each author's copyright. In most cases, these works may not be reposted without the explicit permission of the copyright holder.
 
 ## About this code
 
-This code builds a basic HTML-only site using [Metalsmith](http://www.metalsmith.io/), a Node.js simple, pluggable static site generator. It is a demonstration rather than build recommendations which will be different for every site. Please use any part of the code as you wish.
+This code builds a basic HTML-only site using [Metalsmith](http://www.metalsmith.io/), a Node.js simple, pluggable static site generator. 
+
+If you wish to run any of the demos present on the website on your own, you can refer to the specific source, or you can download and compile the entire website following the instructions below.
 
 ## Installation
 
 Please ensure [Node.js](https://nodejs.org/) and [Git](https://git-scm.com/) are installed on your system.
 
-Download the demonstration code and switch to directory:
+Download the code and switch to directory:
 
 ```bash
-git clone git@github.com:craigbuckler/metalsmith-demo.git
-cd metalsmith-demo
+git clone https://github.com/M-Anwar/PersonalWebsite.git
+cd PersonalWebsite
 ```
 
 Install dependencies:
@@ -37,7 +38,7 @@ npm start
 
 (Stop the server with `Ctrl+C`.)
 
-To build the site for production and compress HTML files:
+To build the site for production
 
 ```bash
 npm run production
@@ -45,6 +46,3 @@ npm run production
 
 The site is built in the `/build` folder.
 
-## Further information
-
-The [built site](https://rawgit.com/sitepoint-editors/metalsmith-demo/master/build/) provides further information about site files and settings.
