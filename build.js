@@ -143,7 +143,7 @@ ms
       ftpupload({
         buildPath: dir.dest,
         host: "cs.toronto.edu",
-        remoteDir: '/tempDir'
+        remoteDir: '/public_html'
       });
     }  
   });
