@@ -33,13 +33,14 @@ var
   layouts = require('metalsmith-layouts'),
   sitemap = require('metalsmith-mapsite'),
   rssfeed = require('metalsmith-feed'),
-  assets = require('metalsmith-assets'),
+  assets = require('metalsmith-assets'), 
   htmlmin = null,//devBuild ? null : require('metalsmith-html-minifier'),
   browsersync = devBuild ? require('metalsmith-browser-sync') : null,
 
   // custom plugins
   setdate = require(dir.lib + 'metalsmith-setdate'),
   moremeta = require(dir.lib + 'metalsmith-moremeta'),
+  ftpupload = require(dir.lib + 'metalsmith-ftpupload'),
   debug = consoleLog ? require(dir.lib + 'metalsmith-debug') : null,
 
   siteMeta = {
@@ -65,8 +66,8 @@ console.log((devBuild ? 'Development' : 'Production'), 'build, version', pkg.ver
 var ms = metalsmith(dir.base)
   .clean(true) // clean folder before a production build
   .source(dir.source + 'html/') // source folder (src/html/)
-  .destination(dir.dest) // build folder (build/)
-  .metadata(siteMeta) // add meta data to every page
+  .destination(dir.dest) // build folder (build/)  
+  .metadata(siteMeta) // add meta data to every page  
   .use(publish()) // draft, private, future-dated
   .use(setdate()) // set date on every page if not set in front-matter
   .use(collections({ // determine page collection/taxonomy
@@ -135,6 +136,16 @@ ms
     destination: './'
   }))
   .build(function(err) { // build
-    if (err) throw err;   
+    if (err) throw err; 
 
+    //Upload to Server via FTP on production build
+    if(!devBuild){
+      ftpupload({
+        buildPath: dir.dest,
+        host: "cs.toronto.edu",
+        remoteDir: '/tempDir'
+      });
+    }  
   });
+
+
