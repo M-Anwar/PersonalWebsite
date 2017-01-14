@@ -70,6 +70,16 @@ var ms = metalsmith(dir.base)
   .metadata(siteMeta) // add meta data to every page  
   .use(publish()) // draft, private, future-dated
   .use(setdate()) // set date on every page if not set in front-matter
+  .use((files, metalsmith, done) => { //Dirty workaround for metalsmith/browser-sync bug   
+    var metadata = metalsmith.metadata(); 
+     if (metadata.collections){
+       Object.keys(metadata.collections).forEach(function(collection){
+         delete metadata[collection];
+       });
+       delete metadata.collections;
+     }
+    done();
+  })
   .use(collections({ // determine page collection/taxonomy
     page: {
       pattern: '**/index.*',
