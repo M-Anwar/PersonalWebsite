@@ -104,7 +104,14 @@ a[href^="tel:"] {
     color: #F25C27;
     letter-spacing: 0px;
  }
- 
+ .blog-entry canvas{
+    display:block;
+    margin: 0 auto;
+ }
+ .blog-entry pre{
+    background-color: transparent;
+    border:none;
+ }
 /*------ header ------- */
 header {
   /*padding: 30px 0 29px;*/
