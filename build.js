@@ -168,24 +168,28 @@ ms
       });
     }  
     if(onserver){
-      var remoteDir = '~/tempDir'
 
       //Clear the folder of items
       fs.readdir(remoteDir, function(err, files){
         if(err){console.log(err); return;};
-        files.forEach(function(f){
-          fs.remove(remoteDir +'/' + f, function(err){
-            if(err){
-              console.log(err);
-            }
-          });
-          console.log('removing: ' + f);
-        });
+
+        for(var i =0; i < files.length; i++){
+          console.log('removing: ' + files[i]);
+          try {
+            fs.removeSync(remoteDir +'/' + files[i]);
+          } catch (error) {
+            console.log(error);
+          }
+          
+        }
+
+        console.log("\nCopying Files");
+        fs.copy('build', remoteDir, function(err){
+          if(err) console.log(err);
+        });        
       });
 
-      fs.copy('build',remoteDir, function(err){
-        if(err){ console.log(err); }
-      });
+      
       
 
     }
