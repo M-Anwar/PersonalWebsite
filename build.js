@@ -8,6 +8,14 @@ Build production site with `npm run production`
 
 'use strict';
 
+
+var args = require('minimist')(process.argv.slice(2));
+var onserver = false;
+if (args['v']){
+    console.log("Building on Server");
+    onserver = true;
+}
+
 var
 // defaults
   consoleLog = false, // set true for metalsmith file and meta content logging
@@ -36,6 +44,7 @@ var
   assets = require('metalsmith-assets'), 
   htmlmin = null,//devBuild ? null : require('metalsmith-html-minifier'),
   browsersync = devBuild ? require('metalsmith-browser-sync') : null,
+  fs = require('fs-extra'),
 
   // custom plugins
   setdate = require(dir.lib + 'metalsmith-setdate'),
@@ -62,6 +71,8 @@ var
   };
 
 console.log((devBuild ? 'Development' : 'Production'), 'build, version', pkg.version);
+
+
 
 var ms = metalsmith(dir.base)
   .clean(true) // clean folder before a production build
@@ -149,13 +160,35 @@ ms
     if (err) throw err; 
 
     //Upload to Server via FTP on production build
-    if(!devBuild){
+    if(!devBuild && !onserver){
       ftpupload({
         buildPath: dir.dest,
         host: "cs.toronto.edu",
         remoteDir: '/public_html'
       });
     }  
+    if(onserver){
+      var remoteDir = '~/tempDir'
+
+      //Clear the folder of items
+      fs.readdir(remoteDir, function(err, files){
+        if(err){console.log(err); return;};
+        files.forEach(function(f){
+          fs.remove(remoteDir +'/' + f, function(err){
+            if(err){
+              console.log(err);
+            }
+          });
+          console.log('removing: ' + f);
+        });
+      });
+
+      fs.copy('build',remoteDir, function(err){
+        if(err){ console.log(err); }
+      });
+      
+
+    }
   });
 
 
