@@ -168,7 +168,7 @@ ms
       });
     }  
     if(onserver){
-      var remoteDir = '../tempDir'
+      var remoteDir = '../public_html'
 
       //Clear the folder of items
       fs.readdir(remoteDir, function(err, files){
