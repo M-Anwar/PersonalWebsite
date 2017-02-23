@@ -78,7 +78,7 @@ a[href^="tel:"] {
 
  }
  .blog-entry figure img{
-    padding: 5px 0px 0px 0px;
+    padding: 1px 1px 1px 1px;
     border: 1px solid white;
  }
  

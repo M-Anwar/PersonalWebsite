@@ -1,0 +1,10 @@
+project Ideas:
+		- Mozilla Firefox game 
+		- Cell Counting, Computer vision
+		- 3D Software Rasterizer
+		- 
+
+First Blog Idea
+		- Usefulness of 3D modelling in engineering
+		
+		

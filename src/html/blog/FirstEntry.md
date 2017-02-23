@@ -4,7 +4,7 @@ title: My First Blog
 description: Welcome to the blog. This is my first entry outlining what to expect on here. Looking forward to adding to this in the future! 
 shortDescription: Welcome to the blog and my first entry.
 headerImage: img/blog-1.jpg
-isProject: false
+isProject: true
 ---
 
 ##### Welcome to my FIRST blog entry!
