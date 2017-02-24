@@ -6,7 +6,20 @@
 <script >
   jQuery(window).load(function () {
     jQuery('.magnifier').touchTouch();
+  
+    $('.lightbox').viewer({toolbar: false, navbar: false, title: false, rotateable: false, scalable: false });
+    $('.lightboxgallery').viewer({toolbar: false, navbar: true, title: false, rotateable: false, scalable: false });    
+    $('.lightbox').click(function(event){
+      event.preventDefault();       
+      $(this).viewer();      
+    });
+    $('.lightboxgallery').click(function(event){
+      event.preventDefault();          
+      $(this).viewer();        
+    });
+
   });
+  
 </script>
 </head>
 <body>
@@ -49,6 +62,6 @@
 
 
 {{> footer template='project entry' }}
-<script src="{{ root }}js/bootstrap.js"></script>
+<!--<script src="{{ root }}js/bootstrap.js"></script>-->
 </body>
 </html>
