@@ -1,5 +1,6 @@
 ---
 date: 2017-01-09
+publish: draft
 title: The Usefullness of 3D Modelling and Animation 
 description: In this blog entry I talk about the usefulness of 3D modelling, giving particular examples from my undergraduate engineering career. I cover how I first started with 3D visualization, and how you can also begin learning this incredibly useful transferable skill. If a picture is worth a thousand words, then having the ability to sketch in 3D is truly an invaluable skill, useful to all regardless of their specialization. So the next time you have an incredible idea, draw it out … in 3D!
 shortDescription: Express your ideas in 3D.
