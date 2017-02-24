@@ -180,10 +180,8 @@ ms
             fs.removeSync(remoteDir +'/' + files[i]);
           } catch (error) {
             console.log(error);
-          }
-          
+          }          
         }
-
         console.log("\nCopying Files");
         fs.copy('build', remoteDir, function(err){
           if(err) console.log(err);

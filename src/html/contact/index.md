@@ -16,7 +16,7 @@ I am currently a MScAC (Masters of Science in Applied Computing) graduate studen
 		        <br> First year of the MScAC program in Computer science. Relevant courses include:
 		        	<ul>
 		        		<li> Computer Vision (Fundamentals and Advanced Topics) </li>
-		        		<li> Computer Graphics </li>
+		        		<li> Computer Graphics / Geometry Processing</li>
 		        		<li> Machine learning (Fundamentals and Advanced Topics) </li>
 		        		<li> Natural Language Processing </li>
 		        	</ul>
@@ -66,6 +66,14 @@ I am currently a MScAC (Masters of Science in Applied Computing) graduate studen
 ##### Honors and Awards
 <table class="table table-condensed">
 	<tbody>
+		<tr> 
+			<td class="span2"><strong> Jan 2017 <strong></td>
+			<td>
+		        <strong>GoILM: The Innovation Weekend Start-Up Pitch (2nd Place)</strong>
+		        <br>
+	        	Worked in a group of 5 for a weekend hackathon, winning $1000 prize money at the GoILM Innovation Weekend Competition. Our pitch identified a need for a custom donor management software for grassroots non-profit organizations. We presented a quickly developed web-based solution that could accelerate grassroots fundraising events - supporting various donor payment flows and performing custom post-processing to save 185-215 hours of volunteer hours each event.
+			</td>
+		</tr>
 		<tr> 
 			<td class="span2"><strong> May 2016 <strong></td>
 			<td>
