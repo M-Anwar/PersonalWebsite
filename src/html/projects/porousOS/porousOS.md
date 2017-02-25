@@ -7,4 +7,6 @@ headerImage: img/projects/porousOS/titleImage.jpg
 isProject: true
 ---
 
-##### CONTENT TO BE ADDED
+The lack of dedicated multitasking interface features in smartphones has resulted in users attempting a sequential form of multitasking via frequent app switching. In addition to the obvious temporal cost, it requires physical and cognitive effort which increases multifold as the back and forth switching becomes more frequent. We propose porous interfaces, a paradigm that combines the concept of translucent windows with finger identification to support efficient multitasking on small screens. Porous interfaces enable partially transparent app windows overlaid on top of each other, each of them being accessible simultaneously using a different finger as input. We design porous interfaces to include a broad range of multitasking interactions with and between windows, while ensuring fidelity with the existing smartphone interactions. We develop an end-to-end smartphone interface that demonstrates porous interfaces. In a qualitative study, participants found porous interfaces intuitive, easy and useful for frequent multitasking scenarios. 
+
+<iframe style="position: relative; height: 450px; width: 100%;"  src="https://www.youtube.com/embed/ZviSydv9f8Q" frameborder="0" allowfullscreen></iframe>
