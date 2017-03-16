@@ -46,3 +46,5 @@ npm run production
 
 The site is built in the `/build` folder.
 
+Everything should be working now
+
