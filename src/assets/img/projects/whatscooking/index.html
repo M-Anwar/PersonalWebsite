@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Three.js Project</title>
+    <title>Whats Cooking? Visualization</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -12,7 +12,9 @@
 
     <!-- build:css assets/css/style.css -->
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
     <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
     <!-- endbuild -->
 
   </head>
@@ -21,8 +23,44 @@
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    
+    <div id="header">
+      <h4> Whats Cooking? TSNE Visualization </h4>
 
+      <button type="button" class="button" data-toggle="collapse" data-target="#demo">Details</button>
+      <div id="demo" class="collapse">
+        <p> By: Muhammed Anwar and Ayaan Chaudhry </p>
+        <p> Click and Drag to rotate and move, Scroll to zoom </p>
+        <p> <b>Word2Vec: </b> </p>
+        <button id="load_2d_data" class = "button">
+          2D T-SNE
+        </button>
+        <button id="load_3d_data" class = "button">
+          3D T-SNE
+        </button>
+        <button id="animate" class = "button">
+          Animate
+        </button>
+        <p> <b>Skip Thought Vectors: </b> </p>
+        <button id="load_2d_data_s" class = "button">
+          2D T-SNE
+        </button>
+        <button id="load_3d_data_s" class = "button">
+          3D T-SNE
+        </button>
+        <h4> Legend </h4>
+        <div id="legend" class="row">
+          <ul style="list-style:none" id="legend-list">         
+                   
+          <ul>  
+        </div>    
+      </div>      
+    </div>
+    
+    
     <div id="canvas-body">
+      <div id ="interface">        
+      </div>
     </div>
 
     <!-- build:js assets/js/vendor.js -->
@@ -33,6 +71,17 @@
 
     <!-- build:js assets/js/main.js -->
     <script src="assets/js/main.js"></script>
+    <script type="text/javascript">
+      $( "#load_2d_data" ).click(function() {
+        load_2D_data();
+      });
+      $( "#load_3d_data" ).click(function() {
+        load_3D_data();
+      });
+      $( "#animate" ).click(function() {
+        toggleAnimation();
+      });
+    </script>
     <!-- endbuild -->
 
   </body>

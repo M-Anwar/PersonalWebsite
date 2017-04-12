@@ -10,3 +10,68 @@ canvas {
   width: 100%;
   height: 100%;
 }
+
+div#header{
+  position:absolute;
+  color:white;
+  width: auto;
+  max-height: 100vh;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  background:rgba(0, 0, 0, 0.3);
+  overflow-y:auto;
+  -webkit-overflow-scrolling: touch;
+  
+}
+#legend{
+  column-count: 2;
+}
+.box {
+  float: left;
+  width: 20px;
+  height:5px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  /*background: #13b4ff;*/
+}
+div#header p{
+ line-height: 100%;
+ font-size: 12px;
+}
+
+div#header .button{
+  background-color: #e7e7e7; /* Green */
+  border: none;
+  color: black;
+  padding: 2px 8px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 4px;
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;
+}
+div#header .button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    cursor: pointer;
+}
+
+div#interface {
+    position:absolute;
+    /*width: 100%;*/
+    background: #555555;
+    padding-left: 10px;
+    padding-right:10px;
+    padding-top:10px;
+    color: white;
+    border-radius: 10px;
+}
+
+div#interface p{
+    line-height: 100%;
+}
