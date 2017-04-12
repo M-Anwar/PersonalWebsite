@@ -35,12 +35,12 @@
         <button id="load_2d_data" class = "button">
           2D T-SNE
         </button>
-        <button id="load_3d_data" class = "button">
+        <button id="load_3d_data" class = "button" >
           3D T-SNE
-        </button>
-        <button id="animate" class = "button">
-          Animate
-        </button>
+        </button>        
+        <button id="animate" class = "button" data-toggle="collapse" data-target="#demo" data-placement="bottom" title="Shows an animation of T-SNE as it iteratively learns the best embedding.">
+          Animate 2D         
+        </button>        
         <p> <b>Skip Thought Vectors: </b> </p>
         <button id="load_2d_data_s" class = "button">
           2D T-SNE
@@ -68,6 +68,12 @@
     <script src="assets/js/lib/three.min.js"></script>
     <script src="assets/js/lib/plugins/OrbitControls.js"></script>
     <!-- endbuild -->
+
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+    });
+    </script>
 
     <!-- build:js assets/js/main.js -->
     <script src="assets/js/main.js"></script>
