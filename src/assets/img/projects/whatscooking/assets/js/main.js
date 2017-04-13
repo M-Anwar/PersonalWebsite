@@ -53,7 +53,7 @@ var mouse, INTERSECTED;
 var UI;
 var animate = false;
 var t = 0;
-var dir = 0.2;
+var dir = 0.1;
 
 //Mouse vars
 var clicked;
@@ -81,6 +81,7 @@ function populate_data(data){
   var dataGeometry = new THREE.Geometry();
   num_cuisines = 0;
   cuisines={};
+  ingredientLabel = [];
 
   for(var i =0; i <data_points.length; i++){
     var comps = data_points[i].split(',');

@@ -37,10 +37,12 @@
         </button>
         <button id="load_3d_data" class = "button" >
           3D T-SNE
-        </button>        
-        <button id="animate" class = "button" data-toggle="collapse" data-target="#demo" data-placement="bottom" title="Shows an animation of T-SNE as it iteratively learns the best embedding.">
-          Animate 2D         
-        </button>        
+        </button> 
+        <span data-toggle="collapse" data-target="#demo">
+          <button id="animate" class = "button" data-toggle="tooltip" data-placement="bottom" title="Shows an animation of T-SNE as it iteratively learns the best embedding.">
+            Animate 2D         
+          </button>   
+        </span>     
         <p> <b>Skip Thought Vectors: </b> </p>
         <button id="load_2d_data_s" class = "button">
           2D T-SNE
