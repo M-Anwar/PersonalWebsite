@@ -51,6 +51,7 @@ var dirty = false;
 var raycaster, intersects;
 var mouse, INTERSECTED;
 var UI;
+var load_bar;
 var animate = false;
 var t = 0;
 var dir = 0.1;
@@ -76,16 +77,24 @@ function getColor(cuisine_class, num_cuisines){
   var hsl_color = "hsl(" + hue + ",100%, "+ lit +"%)";
   return [new THREE.Color(hsl_color), hsl_color];
 }
-function populate_data(data){
+function populate_data(data, skip=false){
   var data_points = data.split("\n");
   var dataGeometry = new THREE.Geometry();
   num_cuisines = 0;
   cuisines={};
   ingredientLabel = [];
 
+  var x_scale = 10;
+  var y_scale = 6;
+  var z_scale = 10;
   for(var i =0; i <data_points.length; i++){
     var comps = data_points[i].split(',');
-    
+    if(skip){
+      comps.splice(0,0,"Skip-Thought");  
+      x_scale = 1;
+      y_scale = 1;
+      z_scale = 1;    
+    }
     // var x = parseFloat(comps[0])*10;
     // var y = parseFloat(comps[1])*6;
     // if(comps.length==4){
@@ -99,15 +108,15 @@ function populate_data(data){
     // }
     var ingredient = comps[0];
     var cuisine = comps[1];
-    var x = parseFloat(comps[2])*10;
-    var y =  parseFloat(comps[3])*6;
+    var x = parseFloat(comps[2])*x_scale;
+    var y =  parseFloat(comps[3])*y_scale;
     var z = 0;
     if(comps.length==5){
-      z =  parseFloat(comps[4])*10;
+      z =  parseFloat(comps[4])*z_scale;
     }
     
     ingredientLabel.push({"ingredient":ingredient, "cuisine":cuisine});    
-    if(!(cuisine in cuisines)){      
+    if(!(cuisine in cuisines)){         
       cuisines[cuisine]=num_cuisines;
       num_cuisines++;
     }
@@ -120,6 +129,9 @@ function populate_data(data){
   var colors = [];  
   for(var i =0; i <data_points.length; i++){
     var comps = data_points[i].split(',');
+    if(skip){
+      comps.splice(0,0,"Skip-Thought");      
+    }
     var cuisine = comps[1];    
     colors[i] = getColor(cuisines[cuisine], num_cuisines)[0];
   }
@@ -391,13 +403,13 @@ function loadAnimationData(data){
     }   
   
   } 
-  
+   load_bar.html("");
   
 }
 $(document).ready(function() {
   UI = $("#interface");
-  hideUI();
-  
+  load_bar = $("#loading");
+  hideUI();  
   $.ajax({
         type: "GET",
         url: "assets/2D_tsne_word_data.txt",
@@ -429,6 +441,29 @@ function load_3D_data(){
         success: function(data) {populate_data(data);}
      });
 }
+function load_2d_data_s(){
+  dirty = true;
+  scene.remove(pointField);
+  t=0;
+  $.ajax({
+        type: "GET",
+        url: "assets/2D_tsne_skip_data.csv",
+        dataType: "text",
+        success: function(data) {populate_data(data, true);}
+     });
+}
+
+function load_3d_data_s(){
+  dirty = true;
+  scene.remove(pointField);
+  t=0;
+  $.ajax({
+        type: "GET",
+        url: "assets/3D_tsne_skip_data.csv",
+        dataType: "text",
+        success: function(data) {populate_data(data, true);}
+     });
+}
 function toggleAnimation(){  
   controls.reset();
   animate = !animate;
@@ -438,11 +473,15 @@ function toggleAnimation(){
   }
   if(!animationData){
     console.log("Reloading Animation Data");
+     load_bar.html("Loading..");
     $.ajax({
         type: "GET",
         url: "assets/2D_tsne_animate_data.txt",
-        dataType: "text",
+        dataType: "text",             
         success: function(data) {loadAnimationData(data);}
+     }).progress(function(e,part){
+        var prog =  "Loading..."+ parseInt((e.loaded /1000000 )) + " Mb"    ;        
+        load_bar.html(prog);    
      });    
   }
 }

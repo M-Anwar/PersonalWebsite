@@ -12,8 +12,9 @@
 
     <!-- build:css assets/css/style.css -->
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <script src="assets/js/jquery.js"></script>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">  
+    <script src="assets/js/jquery.js"></script>  
+    <script src="assets/js/jq-ajax-progress.min.js"></script>   
     <script src="assets/js/bootstrap.js"></script>
     <!-- endbuild -->
 
@@ -26,7 +27,7 @@
     
     <div id="header">
       <h4> Whats Cooking? TSNE Visualization </h4>
-
+      <span id="loading"> </span> 
       <button type="button" class="button" data-toggle="collapse" data-target="#demo">Details</button>
       <div id="demo" class="collapse">
         <p> By: Muhammed Anwar and Ayaan Chaudhry </p>
@@ -88,6 +89,12 @@
       });
       $( "#animate" ).click(function() {
         toggleAnimation();
+      });
+      $( "#load_2d_data_s" ).click(function() {
+        load_2d_data_s();
+      });
+      $( "#load_3d_data_s" ).click(function() {
+        load_3d_data_s();
       });
     </script>
     <!-- endbuild -->
