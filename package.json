@@ -6,6 +6,7 @@
   "main": "build.js",
   "scripts": {
     "start": "node ./build.js",
+    "production_linux": "export NODE_ENV=production && node ./build.js",
     "production": "set NODE_ENV=production && node ./build.js",
     "build": "export NODE_ENV=production && node ./build.js -v",
     "test": "echo \"Error: no test specified\" && exit 1"

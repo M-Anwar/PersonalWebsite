@@ -6,10 +6,9 @@ shortDescription: Cuisine Identification using Word Embedding’s.
 headerImage: img/projects/whatscooking/title.jpg
 isProject: true
 ---
-<a href="{{root}}img/projects/whatscooking/index.html"> TSNE Visualization </a> can be found here. Implemented in WebGL.
-
 The <a href="{{root}}img/projects/whatscooking/index.html"> t-SNE Visualization </a> can be found here. Implemented in WebGL.
-The python notebook for this project can be found here. This is the final project for the course CSC412.
+
+The <a href="{{root}}img/projects/whatscooking/FinalProject.html">python notebook for this project can be found here </a>. This is the final project for the course CSC412.
 ___
 
 ##### Introduction
